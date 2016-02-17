@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="box">
+    <p>
+      <strong>Author:</strong>
+      <%= @comment.user.username %>
+    </p>
+    
+    <p>
+      <strong>Date:</strong>
+      <%= comment.created_at %>
+    </p>
+    
+    <p>
+      <strong>Comment entry:</strong>
+      <%= @comment.comment_entry %>
+    </p>
+  </div>
+  
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

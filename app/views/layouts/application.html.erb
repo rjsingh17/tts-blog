@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    
+<nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo right">RJ's Blogs</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="https://tts-blog-rjsingh17.c9users.io/blog_posts">Home</a></li>
+            <li><a href="https://tts-blog-rjsingh17.c9users.io/blog_posts/new">New Blog</a></li>
+            <li><a href="https://tts-blog-rjsingh17.c9users.io/comments">My Comments</a></li>
+            <li>
+                <div class="pull-right">
+                  <% if !user_signed_in? %>
+                   <%= link_to "Sign Up", new_user_registration_path %>
+                  <% end %>
+                </div>          
+            </li>
+            <li>
+                <div class="pull-right">
+                  <% if user_signed_in? %>
+                   <%= link_to "Edit Profile", edit_user_registration_path %>
+                  <% end %>
+                </div>          
+            </li>
+            <li>
+                <div class="pull-right">
+                  <% if user_signed_in? %>
+                    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                  <% end %>  
+                </div>
+            </li>
+          </ul>
+        </div>
+</nav>    
+
+    
+    
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+    <div class="container">
+    
+        <%= yield %>
+    
+    </div>
+    
+    
+    
+</body>
+</html>
+
